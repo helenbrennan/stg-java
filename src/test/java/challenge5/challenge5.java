@@ -62,14 +62,13 @@ public class challenge5 {
         copart.show100Entries();
         Thread.sleep(1000);
         List<String> results = copart.damages();
-        Set<String> damaged = new HashSet<>(results);
-        LinkedHashMap<String, Integer> damageType = new LinkedHashMap<>();
+        HashMap<String, Integer> damageType = new HashMap<>();
         damageType.put("REAR END", 0);
         damageType.put("FRONT END", 0);
         damageType.put("MINOR DENT/SCRATCHES", 0);
         damageType.put("UNDERCARRIAGE", 0);
         damageType.put("MISC", 0);
-        for (String damage : damaged) {
+        for (String damage : results) {
             switch (damage) {
                 case "REAR END":
                     damageType.put("REAR END", damageType.get("REAR END") + 1);
